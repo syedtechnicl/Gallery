@@ -1,30 +1,17 @@
-const Card = ({ item }) => {
-  return (
+const Card=(props)=>{
+return(
     <>
-      <div>
-        {item.map((mapvalue) => {
-          const { images, name, category, rate, price, description } = mapvalue;
-          return (
-            <>
-              <div className="card" style={{ width: "18rem" }}>
-                <img className="card-img-top" src={images} alt="Card image cap" />
-                <div className="card-body">
-                  <h5 className="card-title">{name}</h5>
-                  <p className="card-text">
-                  {category}
-                  </p>
-                  <span className="bg bg-danger">{rate}</span>
-                  <a href="#" class="btn btn-primary">
-                    price {price}
-                  </a>
-                  <p>{description}</p>
-                </div>
-              </div>{" "}
-            </>
-          );
-        })}
-      </div>
+        <div className="card" style={{width:'18rem'}}>
+  <img className="card-img-top" src={props.thumbnailUrl} alt="Card image cap"/>
+  <div className="card-body">
+    <h5 className="card-title">{props.title}</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <img src={props.url} alt="" />
+    <h1>{props.id}</h1>
+  </div>
+</div>
     </>
-  );
-};
+)
+}
 export default Card;
